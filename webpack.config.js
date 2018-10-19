@@ -9,38 +9,38 @@ module.exports = {
         path: __dirname + '/public',
         filename: 'app.js'
     },
-    devServer:{
+    devServer: {
         port: 3000,
         contentBase: './public'
     },
-    resolve:{
-        extensions:['.js','.jsx']
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'style.css'
         })
     ],
-    module:{
+    module: {
         rules: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
-            query:{
-                presets: ['@babel/preset-env','@babel/preset-react'],
-                plugins: ['@babel/plugin-proposal-object-rest-spread','@babel/plugin-proposal-class-properties']
+            query: {
+                presets: ['@babel/preset-env', '@babel/preset-react'],
+                plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties']
             }
         },
         {
             test: /\.css$/,
             use: [
                 MiniCssExtractPlugin.loader,
-                'css-loader',
-                ],    
+                'css-loader'
+                ]
         },
         {
             test: /\.(png|svg|jpg|gif)$/,
             use: ['file-loader']
         }]
     }
-}
+};
