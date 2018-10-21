@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import '../template/style.css';
+import { Link } from 'react-router-dom';
 
-export default class App extends Component {
+
+class App extends Component {
     state = {
         isYellow: true
     }
 
     render() {
-        console.log('teste');
         const { isYellow } = this.state;
         return (
-            <div className={isYellow ? 'color' : '' }>Boilerplate</div>
+            <div className={isYellow ? 'color' : '' }>
+                Boilerplate
+                <Link to="/about">About</Link>
+            </div>
         );
     }
 }
+
+export default App;
