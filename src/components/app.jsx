@@ -14,6 +14,8 @@ class App extends Component {
             <div className={isYellow ? 'color' : '' }>
                 Boilerplate
                 <Link to="/about">About</Link>
+                <Link to="/green">Context Green</Link>
+                <Link to="/blue">Context Blue</Link>
             </div>
         );
     }
