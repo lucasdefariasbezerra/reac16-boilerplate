@@ -1,24 +1,26 @@
 import React from 'react';
 import '../template/style.css';
 import { ContextConsumer } from './store/storeContext';
-import Context from './store/context';
 
 
 const Green = () => {
     return (
-        <Context>
-            <ContextConsumer>
-                {(context) => {
-                    return(
-                    <div className='green'>
-                       {context.number}
+        <ContextConsumer>
+            {(context) => {
+                return(
+                    <div className="green">
+                        {context.number}
+                        <button onClick={() => handleDecrement(context)}>DEC</button>
                     </div>
-                    );
-                    }
-                }
-            </ContextConsumer>
-        </Context>
+                );
+            }
+            }
+        </ContextConsumer>
     );
+};
+
+const handleDecrement = (context) => {
+    context.decrement();
 };
 
 export default Green;

@@ -1,23 +1,26 @@
 import React from 'react';
 import '../template/style.css';
 import { ContextConsumer } from './store/storeContext';
-import Context from './store/context';
+import { Link } from 'react-router-dom';
 
 const Green = () => {
     return (
-        <Context>
-            <ContextConsumer>
-                {(context) => {
-                    return(
-                    <div className='blue'>
-                       {context.number}
-                       <button onClick={context.increment}>INC</button>
+        <ContextConsumer>
+            {(context) => {
+                return(
+                    <div className="blue">
+                        {context.number}
+                        <button onClick={() => handleIncrement(context)}>INC</button>
+                        <Link to="/green">Context Green</Link>
                     </div>);
-                    }
-                }
-            </ContextConsumer>
-        </Context>
+            }
+            }
+        </ContextConsumer>
     );
+};
+
+const handleIncrement = (context) => {
+    context.increment();
 };
 
 export default Green;

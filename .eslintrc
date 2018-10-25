@@ -6,13 +6,19 @@
     "semi-spacing":"error",
     "comma-dangle":"error",
     "semi":"error",
-    "no-undef":"off",
-    "no-undefined":"off",
     "no-trailing-spaces":"error",
     "no-multi-spaces":"error",
     "space-before-blocks":"error",
     "comma-spacing":"error",
-    "key-spacing":"error"
-
+    "key-spacing":"error",
+    "no-empty": "error",
+    "no-extra-semi": "error",
+    "no-sparse-arrays": "error",
+    "array-bracket-newline": "error",
+    "camelcase":"error",
+    "eol-last":"error",
+    "indent": "error",
+    "jsx-quotes":"error",
+    "prefer-destructuring": "error"
   }
 }

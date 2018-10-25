@@ -6,23 +6,24 @@ import { ContextProvider } from './storeContext';
 export default class Context extends Component {
     state = {
         number: 10,
-        increment: () => {
-            console.log('cai aqui na funcao');
-            this.setState({number: this.state.number + 1});
-        }
+        increment: () => this.incrementNumber(),
+        decrement: () => this.decrementNumber()
     };
 
     incrementNumber = () => {
-        console.log('cai aqui na funcao');
-        this.setState({number: this.state.number + 1});
+        const { number } = this.state;
+        this.setState({number: number + 1});
+    };
+
+    decrementNumber = () => {
+        const { number } = this.state;
+        this.setState({number: number - 1});
     }
 
     render() {
-        const { children } = this.props;
-        console.log('cai aqui', children);
         return (
             <ContextProvider value={this.state}>
-                {children}
+                {this.props.children}
             </ContextProvider>
         );
     }
