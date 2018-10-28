@@ -11,6 +11,7 @@ const Green = () => {
                     <div className="blue">
                         {context.number}
                         <button onClick={() => handleIncrement(context)}>INC</button>
+                        <button onKeyUp={(e) => handleIncrementByKey(e, context)}>INCREMENT BY KEY</button>
                         <Link to="/green">Context Green</Link>
                     </div>);
             }
@@ -21,6 +22,12 @@ const Green = () => {
 
 const handleIncrement = (context) => {
     context.increment();
+};
+
+const handleIncrementByKey = (e, context) => {
+    if( e.key === 'Enter') {
+        context.increment();
+    }
 };
 
 export default Green;
